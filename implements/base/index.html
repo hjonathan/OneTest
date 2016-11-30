@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>PMDynaform</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/gridstack.css"/>
+    <link rel="stylesheet" href="css/bundle.css"/>
+    <script src="js/lodash.js"></script>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/datatables.js"></script>
+    <script src="js/plotly.js"></script>
+    <script src="js/gridstack.js"></script>
+    <script src="js/gridstack.jQueryUI.js"></script>
+    <script src="js/OneFlux.js"></script>
+    <script type="text/javascript" src="js/bundle.js"></script>
+
+    <script>
+        var d, w, project, data;
+        document.addEventListener('DOMContentLoaded', function () {
+            data = {
+                class: "Module",
+                name: "Administracion de Usuario",
+                models: [
+                    {
+                        class: Model,
+                        name: "user",
+                        fields: [
+                            {
+                                class: Model.Field,
+                                name: "username"
+                            }
+                        ]
+                    }
+                ],
+                components: [{
+                    class: "CRUD.Action",
+                    name: "New",
+                    icon: "/img/icons/add.png",
+                    action: function (controller) {
+                        controller.newModel()
+                    }
+                }
+                    {
+                        class: "CRUD.Action",
+                        name: "Compile",
+                        icon: "/img/icons/compile.png",
+                        action: function (RestApi) {
+                            RestApi.Compiler.compile();
+                        }
+                    }
+
+                ]
+            };
+        });
+        //changes
+    </script>
+</head>
+<body>
+
+<div id="app-container"></div>
+
+###TEMPLATES###
+
+</body>
+</html>

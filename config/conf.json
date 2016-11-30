@@ -1,0 +1,92 @@
+{
+  "test-kernel": {
+    "files": [
+      "kernelFlux/test/Store.test.js",
+      "kernelFlux/test/ComponentBase.test.js",
+      "kernelFlux/test/ContainerBase.test.js",
+      "kernelFlux/test/ActionBus.test.js"
+    ]
+  },
+  "kernel": {
+    "files": [
+      "kernelFlux/src/OneFlux.js"
+    ]
+  },
+  "example": {
+    "filesCSS": [
+      "implements/src/core/css/PMDashboard.css",
+      "implements/src/core/css/Widget.css",
+      "implements/src/boxes/boxMenu/BoxMenu.css",
+      "implements/src/boxes/boxSettings/BoxSettings.css",
+      "implements/src/boxes/boxButtons/BoxButtons.css",
+      "implements/src/boxes/boxWidgetSettings/BoxWidgetSettings.css",
+      "implements/src/boxes/boxHeader/BoxHeader.css",
+      "implements/src/boxes/boxDashboard/BoxDashboard.css",
+      "implements/src/elements/menuElement/MenuElement.css",
+      "implements/src/elements/buttonElement/ButtonElement.css",
+      "implements/src/elements/settingWidgetElement/SettingWidgetElement.css",
+      "implements/src/widgets/datatableWidget/Datatable.css"
+    ],
+    "filesJS": [
+      "implements/src/data/MenuItems.js",
+      "implements/src/data/buttonsItems.js",
+      "implements/src/data/widgetsItems.js",
+      "implements/src/core/PMDashboard.js",
+      "implements/src/core/Dashboard.js",
+      "implements/src/boxes/boxWidgetSettings/BoxWidgetSettings.js",
+      "implements/src/core/Widget.js",
+      "implements/src/widgets/datatableWidget/DatatableWidget.js",
+      "implements/src/widgets/PieChart.js",
+      "implements/src/widgets/BarChart.js",
+      "implements/src/widgets/ScatterChart.js",
+      "implements/src/boxes/boxMain/BoxMain.js",
+      "implements/src/boxes/boxHeader/BoxHeader.js",
+      "implements/src/boxes/boxMenu/BoxMenu.js",
+      "implements/src/boxes/boxDashboard/BoxDashboard.js",
+      "implements/src/boxes/boxSettings/BoxSettings.js",
+      "implements/src/boxes/boxButtons/BoxButtons.js",
+      "implements/src/elements/menuElement/MenuElement.js",
+      "implements/src/elements/buttonElement/ButtonElement.js",
+      "implements/src/elements/settingWidgetElement/SettingWidgetElement.js",
+      "implements/src/core/Project.js"
+    ],
+    "templates": [
+      "implements/src/boxes/boxMain/BoxMain.tpl.html",
+      "implements/src/boxes/boxHeader/BoxHeader.tpl.html",
+      "implements/src/boxes/boxDashboard/BoxDashboard.tpl.html",
+      "implements/src/boxes/boxSettings/BoxSettings.tpl.html",
+      "implements/src/boxes/boxButtons/BoxButtons.tpl.html",
+      "implements/src/boxes/boxWidgetSettings/BoxWidgetSettings.tpl.html",
+      "implements/src/boxes/boxMenu/BoxMenu.tpl.html",
+      "implements/src/elements/menuElement/MenuElement.tpl.html",
+      "implements/src/elements/buttonElement/ButtonElement.tpl.html",
+      "implements/src/elements/settingWidgetElement/SettingWidgetElement.tpl.html",
+      "implements/src/widgets/datatableWidget/DatatableWidget.tpl.html"
+    ]
+  },
+  "test": {
+    "filesJs": [
+      "implements/coverage/core/Dashboard.js",
+      "implements/coverage/core/Widget.js",
+      "implements/coverage/boxes/boxMain/BoxMain.js",
+      "implements/coverage/boxes/boxHeader/BoxHeader.js",
+      "implements/coverage/boxes/boxDashboard/BoxDashboard.js"
+    ],
+    "filesTests": [
+      "implements/test/core/Dashboard.js",
+      "implements/test/core/Widget.js",
+      "implements/test/boxes/boxMain/BoxMain.test.js",
+      "implements/test/boxes/boxHeader/BoxHeader.test.js",
+      "implements/test/boxes/boxDashboard/BoxDashboard.test.js"
+    ]
+  },
+  "build": {
+    "filesCSS": [
+    ],
+    "filesJS": [
+      "implements/src/core/BuilderManager.js"
+    ],
+    "templates": [
+    ]
+  }
+}

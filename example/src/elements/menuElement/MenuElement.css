@@ -1,0 +1,101 @@
+.dashboard-box-menu li {
+    float: left;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+.dashboard-box-menu li > a {
+    color: #333333;
+    outline: none;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+}
+
+.navigation-item {
+    min-width: 205px;
+    cursor: pointer;
+    height: 44px;
+    border: 0px solid rgba(255, 255, 255, 0.15);
+    border-width: 0 0 1px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.navigation-item.active, .navigation-item:hover {
+    background-color: rgba(0, 0, 0, 0.24)
+}
+
+.navigation-item .icon.dashboard {
+    float: left;
+    width: 44px;
+    height: 44px;
+    -moz-background-size: 44px 44px;
+    -o-background-size: 44px 44px;
+    -webkit-background-size: 44px 44px;
+    background-size: 44px 44px;
+    background-repeat: no-repeat;
+    margin: 0 10px 0 0;
+    background-image: url(https://js.devexpress.com/Demos/SalesDashboard/Images/Icons/Sales.png);
+}
+
+.navigation-item .icon.products {
+    float: left;
+    width: 44px;
+    height: 44px;
+    -moz-background-size: 44px 44px;
+    -o-background-size: 44px 44px;
+    -webkit-background-size: 44px 44px;
+    background-size: 44px 44px;
+    background-repeat: no-repeat;
+    margin: 0 10px 0 0;
+    background-image: url(https://js.devexpress.com/Demos/SalesDashboard/Images/Icons/Products.png);
+}
+
+.navigation-item .icon.sectors {
+    float: left;
+    width: 44px;
+    height: 44px;
+    -moz-background-size: 44px 44px;
+    -o-background-size: 44px 44px;
+    -webkit-background-size: 44px 44px;
+    background-size: 44px 44px;
+    background-repeat: no-repeat;
+    margin: 0 10px 0 0;
+    background-image: url(https://js.devexpress.com/Demos/SalesDashboard/Images/Icons/Sectors.png);
+}
+
+.navigation-item .icon.regions {
+    float: left;
+    width: 44px;
+    height: 44px;
+    -moz-background-size: 44px 44px;
+    -o-background-size: 44px 44px;
+    -webkit-background-size: 44px 44px;
+    background-size: 44px 44px;
+    background-repeat: no-repeat;
+    margin: 0 10px 0 0;
+    background-image: url(https://js.devexpress.com/Demos/SalesDashboard/Images/Icons/Regions.png);
+}
+
+.navigation-item h2 {
+    padding-top: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Segoe UI Light', 'Helvetica Neue Light', 'Segoe UI', 'Helvetica Neue', 'Trebuchet MS', Helvetica, 'Droid Sans', Tahoma, Geneva, sans-serif;
+    font-weight: 200;
+    margin: 0 0 3px 0;
+}
+
+.navigation-item span {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 11px;
+    font-family: inherit;
+}
