@@ -4,15 +4,22 @@
     };
     _.extend(ModuleBuilder.prototype, {
         init: function (options) {
-            _.extend(this.options, options);
+            var module;
+            module = this.createNewModule(options);
+            this.createBoxActions(module, options.actions);
             return this;
         },
-        createComponents: function () {
-
+        createNewModule: function (moduleConfig) {
+            var module = OneFlux.instantiateFactory("@module", moduleConfig);
+            return module;
         },
-        createModels: function () {
-
+        createBoxActions: function (newModule, actions) {
+            console.log("create");
+            var boxActions = OneFlux.instantiateFactory("@boxActions", actions);
+            boxActions.setId("$boxActions");
+            newModule.addComponent(boxActions.getId(), boxActions);
+            return this;
         }
     });
-    Eternity.extendNamespace("Eternity.core.ModuleBuilder", ModuleBuilder);
+    OneFlux.registerFactory("@moduleBuilder", [], ModuleBuilder);
 })();

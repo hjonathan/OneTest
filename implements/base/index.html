@@ -27,24 +27,25 @@
                 name: "Administracion de Usuario",
                 models: [
                     {
-                        class: Model,
+                        class: "User",
                         name: "user",
                         fields: [
                             {
-                                class: Model.Field,
+                                class: "Model.Field",
                                 name: "username"
                             }
                         ]
                     }
                 ],
-                components: [{
-                    class: "CRUD.Action",
-                    name: "New",
-                    icon: "/img/icons/add.png",
-                    action: function (controller) {
-                        controller.newModel()
-                    }
-                }
+                actions: [
+                    {
+                        class: "CRUD.Action",
+                        name: "New",
+                        icon: "/img/icons/add.png",
+                        action: function (controller) {
+                            controller.newModel()
+                        }
+                    },
                     {
                         class: "CRUD.Action",
                         name: "Compile",
@@ -53,7 +54,6 @@
                             RestApi.Compiler.compile();
                         }
                     }
-
                 ]
             };
         });
