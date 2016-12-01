@@ -56,6 +56,10 @@
                     }
                 ]
             };
+            var mod = Eternity.create(data);
+            mod.dispatch("module-render-init", {
+                $container: $("#app-container")
+            })
         });
         //changes
     </script>

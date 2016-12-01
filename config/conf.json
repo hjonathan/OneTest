@@ -83,17 +83,22 @@
   "build": {
     "filesCSS": [
       "implements/src/module/Module.css",
-      "implements/src/boxActions/BoxActions.css"
+      "implements/src/boxes/boxActions/BoxActions.css",
+      "implements/src/elements/actionElement/ActionElement.css"
     ],
     "filesJS": [
       "implements/src/core/ModuleBuilder.js",
+
       "implements/src/module/Module.js",
       "implements/src/boxes/boxActions/BoxActions.js",
+      "implements/src/elements/actionElement/ActionElement.js",
+
       "implements/src/core/Eternity.js"
     ],
     "templates": [
       "implements/src/module/Module.tpl.html",
-      "implements/src/boxActions/BoxActions.tpl.html"
+      "implements/src/boxes/boxActions/BoxActions.tpl.html",
+      "implements/src/elements/actionElement/ActionElement.tpl.html"
     ]
   }
 }

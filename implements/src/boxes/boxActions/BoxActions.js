@@ -3,17 +3,12 @@
         $html: null,
         template: null,
         init: function (options) {
-            console.log("llegue al boxactions");
             this.template = _.template($("#tpl-box-actions").html());
-            //this.initMenuItems(options);
-            //this.on("renderInitBoxHeader", this.render);
-            //this.on("addMenu", this.addRenderMenuElement);
+            this.addActions(options);
+            this.actionListeners();
         },
-        initMenuItems: function (options) {
-            if (options.items && _.isArray(options.items)) {
-                this.addMenuElements(options.items);
-            }
-            return this;
+        actionListeners: function () {
+            this.on("module-render", this.render);
         },
         render: function (obj) {
             var that = this;
@@ -21,37 +16,37 @@
             if (obj && obj.$container) {
                 obj.$container.append(this.$html);
             }
-            this.dispatch("renderMenuElement", {
+            this.dispatch("render-action-element", {
                 $container: that.$html.find("ul")
             });
             return this;
         },
-        addMenuElement: function (jsonMenu) {
+        addAction: function (action) {
             var element;
-            if (_.isObject) {
-                element = OneFlux.instantiateFactory("@menuElement", jsonMenu);
+            if (_.isObject(action)) {
+                element = OneFlux.instantiateFactory("@actionElement", action);
                 this.addComponent(element.getId(), element);
-                OneFlux.component(element.getId(), element);
             }
             return element;
         },
-        addMenuElements: function (jsonMenuArray) {
+        addActions: function (actions) {
             var index;
-            if (_.isArray(jsonMenuArray)) {
-                for (index = 0; index < jsonMenuArray.length; index += 1) {
-                    this.addMenuElement(jsonMenuArray[index]);
+            if (_.isArray(actions)) {
+                for (index = 0; index < actions.length; index += 1) {
+                    this.addAction(actions[index]);
                 }
             }
             return this;
-        },
-        addRenderMenuElement: function (jsonMenu) {
-            var that = this,
-                menu = this.addMenuElement(jsonMenu);
-            menu.dispatch("renderMenuElement", {
-                $container: that.$html.find("ul")
-            });
-            return this;
         }
+        /*
+         addRendeElement: function (jsonMenu) {
+         var that = this,
+         menu = this.addMenuElement(jsonMenu);
+         menu.dispatch("renderMenuElement", {
+         $container: that.$html.find("ul")
+         });
+         return this;
+         }*/
     });
 
     OneFlux.registerFactory("@boxActions", [], BoxActions);

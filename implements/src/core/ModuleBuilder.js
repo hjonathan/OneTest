@@ -1,5 +1,6 @@
 (function () {
     var ModuleBuilder = function (options) {
+        this.module = null;
         ModuleBuilder.prototype.init.call(this, options);
     };
     _.extend(ModuleBuilder.prototype, {
@@ -7,6 +8,7 @@
             var module;
             module = this.createNewModule(options);
             this.createBoxActions(module, options.actions);
+            this.module = module;
             return this;
         },
         createNewModule: function (moduleConfig) {
