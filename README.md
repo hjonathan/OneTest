@@ -1,12 +1,8 @@
-PMDashboards
+OneFlux
 ===========
 
-Flexible & Extensible Dashboard based in javascript
+One God, One Truth, One Way & One Flow.
 
-View in Browser
-1.- npm install
-2.- gulp --task build
-3.- node app.js
+## QUICK START
 
-Running tests
-1.- gulp --task test
+npm install
