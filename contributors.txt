@@ -1,0 +1,3 @@
+Notas:
+=========
+1.-  Se necesita un creador de modulos ya que la que la entrada es un objeto JS de un modulo

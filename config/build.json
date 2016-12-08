@@ -1,0 +1,377 @@
+[
+  {
+    "id": "build",
+    "description": "Building files publics",
+    "steps": [
+      {
+        "type": "read",
+        "src": "config/conf.json",
+        "variable": "FILES"
+      },
+      {
+        "type": "parse",
+        "data": "%FILES%",
+        "parseTo": "json",
+        "path": "build/filesCSS",
+        "variable": "FILESCSS"
+      },
+      {
+        "type": "parse",
+        "data": "%FILES%",
+        "parseTo": "json",
+        "path": "build/filesJS",
+        "variable": "FILES"
+      },
+      {
+        "type": "concatenate",
+        "dest_dir": "implements/build/js",
+        "dest_name": "bundle.js",
+        "files": "%FILES%"
+      },
+      {
+        "type": "concatenate",
+        "dest_dir": "implements/build/css",
+        "dest_name": "bundle.css",
+        "files": "%FILESCSS%"
+      },
+      {
+        "type": "read",
+        "src": "config/conf.json",
+        "variable": "FILES"
+      },
+      {
+        "type": "parse",
+        "data": "%FILES%",
+        "parseTo": "json",
+        "path": "build/templates",
+        "variable": "FILES"
+      },
+      {
+        "type": "concatenate",
+        "files": "%FILES%",
+        "variable": "CONCATENATED"
+      },
+      {
+        "type": "replaceFileContents",
+        "orig_file": "implements/base/index.html",
+        "dest_dir": "implements/build",
+        "dest_file": "index.html",
+        "replacements": [
+          {
+            "search": "###TEMPLATES###",
+            "replaceBy": "%CONCATENATED%"
+          }
+        ]
+      },
+      {
+        "type": "copy",
+        "src_dir": "./",
+        "dest_dir": "implements/build",
+        "file_mode": 777,
+        "files": [
+          {
+            "src": "kernelFlux/dist/OneFlux.js",
+            "dest_name": "js/OneFlux.js"
+          },
+          {
+            "src": "libs/gridstack/gridstack.css",
+            "dest_name": "css/gridstack.css"
+          },
+          {
+            "src": "libs/gridstack/gridstack.jQueryUI.js",
+            "dest_name": "js/gridstack.jQueryUI.js"
+          },
+          {
+            "src": "libs/gridstack/gridstack.js",
+            "dest_name": "js/gridstack.js"
+          },
+          {
+            "src": "libs/jquery/jquery-3.1.1.js",
+            "dest_name": "js/jquery-3.1.1.js"
+          },
+          {
+            "src": "libs/jquery-ui/jquery-ui.js",
+            "dest_name": "js/jquery-ui.js"
+          },
+          {
+            "src": "libs/lodash/lodash.js",
+            "dest_name": "js/lodash.js"
+          },
+          {
+            "src": "img/Background.jpg",
+            "dest_name": "img/Background.jpg"
+          },
+          {
+            "src": "libs/plotlyjs/plotly.js",
+            "dest_name": "js/plotly.js"
+          },
+          {
+            "src": "libs/datatable/jquery.datatables.js",
+            "dest_name": "js/datatables.js"
+          },
+          {
+            "src": "libs/datatable/jquery.datatables.css",
+            "dest_name": "css/datatables.css"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "test-kernel",
+    "description": "Building test library",
+    "steps": [
+      {
+        "type": "read",
+        "src": "config/conf.json",
+        "variable": "FILES"
+      },
+      {
+        "type": "parse",
+        "data": "%FILES%",
+        "parseTo": "json",
+        "path": "test-kernel/files",
+        "variable": "FILES"
+      },
+      {
+        "type": "test",
+        "files": "%FILES%"
+      }
+    ]
+  },
+  {
+    "id": "build-kernel",
+    "description": "Building kernel Flux",
+    "steps": [
+      {
+        "type": "read",
+        "src": "config/conf.json",
+        "variable": "FILES"
+      },
+      {
+        "type": "parse",
+        "data": "%FILES%",
+        "parseTo": "json",
+        "path": "kernel/files",
+        "variable": "FILES"
+      },
+      {
+        "type": "browserify",
+        "files": "%FILES%",
+        "dest_dir": "kernelFlux/dist",
+        "dest_name": "OneFlux.js"
+      }
+    ]
+  },
+  {
+    "id": "test",
+    "description": "Building test library",
+    "steps": [
+      {
+        "type": "copy",
+        "src_dir": "./",
+        "dest_dir": "implements/testBuild",
+        "file_mode": 777,
+        "files": [
+          {
+            "src": "kernelFlux/dist/OneFlux.js",
+            "dest_name": "js/OneFlux.js"
+          },
+          {
+            "src": "libs/gridstack/gridstack.css",
+            "dest_name": "css/gridstack.css"
+          },
+          {
+            "src": "libs/gridstack/gridstack.jQueryUI.js",
+            "dest_name": "js/gridstack.jQueryUI.js"
+          },
+          {
+            "src": "libs/gridstack/gridstack.js",
+            "dest_name": "js/gridstack.js"
+          },
+          {
+            "src": "libs/jquery/jquery-3.1.1.js",
+            "dest_name": "js/jquery-3.1.1.js"
+          },
+          {
+            "src": "libs/jquery-ui/jquery-ui.js",
+            "dest_name": "js/jquery-ui.js"
+          },
+          {
+            "src": "libs/lodash/lodash.js",
+            "dest_name": "js/lodash.js"
+          }
+        ]
+      },
+      {
+        "type": "read",
+        "src": "config/conf.json",
+        "variable": "FILES"
+      },
+      {
+        "type": "parse",
+        "data": "%FILES%",
+        "parseTo": "json",
+        "path": "build/filesJS",
+        "variable": "FILES"
+      },
+      {
+        "type": "concatenate",
+        "dest_dir": "implements/testBuild/js",
+        "dest_name": "bundle.js",
+        "files": "%FILES%"
+      },
+      {
+        "type": "read",
+        "src": "config/conf.json",
+        "variable": "JSON"
+      },
+      {
+        "type": "parse",
+        "data": "%JSON%",
+        "parseTo": "json",
+        "path": "test/filesJs",
+        "variable": "FILESJS"
+      },
+      {
+        "type": "parse",
+        "data": "%JSON%",
+        "parseTo": "json",
+        "path": "test/filesTests",
+        "variable": "FILESTESTS"
+      },
+      {
+        "type": "injectFiles",
+        "fileSrc": "implements/base/indexTest.html",
+        "dirDest": "./implements/testBuild",
+        "fileDest": "indexTest.html",
+        "replacements": [
+          {
+            "search": "<!-- inject:build:js -->",
+            "inject": "%FILESJS%"
+          },
+          {
+            "search": "<!-- inject:tests:js -->",
+            "inject": "%FILESTESTS%"
+          }
+        ]
+      },
+      {
+        "type": "mocha-phantomjs-istanbul",
+        "dirSrc": "implements/src",
+        "dirInstruments": "implements/coverage",
+        "runIndex": "implements/testBuild/indexTest.html",
+        "reporter": "spec",
+        "dirCoverage": "implements/coverage/",
+        "hooks": "mocha-phantomjs-istanbul",
+        "coverageFile": "./implements/coverage/coverage.json"
+      }
+    ]
+  },
+  {
+    "id": "example",
+    "description": "Building files publics",
+    "steps": [
+      {
+        "type": "read",
+        "src": "config/conf.json",
+        "variable": "FILES"
+      },
+      {
+        "type": "parse",
+        "data": "%FILES%",
+        "parseTo": "json",
+        "path": "example/filesCSS",
+        "variable": "FILESCSS"
+      },
+      {
+        "type": "parse",
+        "data": "%FILES%",
+        "parseTo": "json",
+        "path": "example/filesJS",
+        "variable": "FILES"
+      },
+      {
+        "type": "concatenate",
+        "dest_dir": "example/build/js",
+        "dest_name": "bundle.js",
+        "files": "%FILES%"
+      },
+      {
+        "type": "concatenate",
+        "dest_dir": "example/build/css",
+        "dest_name": "bundle.css",
+        "files": "%FILESCSS%"
+      },
+      {
+        "type": "read",
+        "src": "config/conf.json",
+        "variable": "FILES"
+      },
+      {
+        "type": "parse",
+        "data": "%FILES%",
+        "parseTo": "json",
+        "path": "example/templates",
+        "variable": "FILES"
+      },
+      {
+        "type": "concatenate",
+        "files": "%FILES%",
+        "variable": "CONCATENATED"
+      },
+      {
+        "type": "replaceFileContents",
+        "orig_file": "example/base/index.html",
+        "dest_dir": "example/build",
+        "dest_file": "index.html",
+        "replacements": [
+          {
+            "search": "###TEMPLATES###",
+            "replaceBy": "%CONCATENATED%"
+          }
+        ]
+      },
+      {
+        "type": "copy",
+        "src_dir": "./",
+        "dest_dir": "example/build",
+        "file_mode": 777,
+        "files": [
+          {
+            "src": "kernelFlux/dist/OneFlux.js",
+            "dest_name": "js/OneFlux.js"
+          },
+          {
+            "src": "libs/gridstack/gridstack.css",
+            "dest_name": "css/gridstack.css"
+          },
+          {
+            "src": "libs/gridstack/gridstack.jQueryUI.js",
+            "dest_name": "js/gridstack.jQueryUI.js"
+          },
+          {
+            "src": "libs/gridstack/gridstack.js",
+            "dest_name": "js/gridstack.js"
+          },
+          {
+            "src": "libs/jquery/jquery-3.1.1.js",
+            "dest_name": "js/jquery-3.1.1.js"
+          },
+          {
+            "src": "libs/jquery-ui/jquery-ui.js",
+            "dest_name": "js/jquery-ui.js"
+          },
+          {
+            "src": "libs/lodash/lodash.js",
+            "dest_name": "js/lodash.js"
+          },
+          {
+            "src": "libs/plotlyjs/plotly.js",
+            "dest_name": "js/plotly.js"
+          }
+        ]
+      }
+    ]
+  }
+]

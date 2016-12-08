@@ -1,0 +1,39 @@
+{
+  "test-kernel": {
+    "files": [
+      "kernelFlux/test/Store.test.js",
+      "kernelFlux/test/ComponentBase.test.js",
+      "kernelFlux/test/ContainerBase.test.js",
+      "kernelFlux/test/ActionBus.test.js"
+    ]
+  },
+  "kernel": {
+    "files": [
+      "kernelFlux/src/OneFlux.js"
+    ]
+  },
+  "build": {
+    "filesJS": [
+	"implements/src/core/Dashboard.js",
+	"implements/src/core/Widget.js"
+      "implements/src/boxes/boxMain/BoxMain.js",
+      "implements/src/boxes/boxHeader/BoxHeader.js",
+      "implements/src/boxes/boxDashboard/BoxDashboard.js"
+    ],
+    "templates": [
+      "src/testJona/dashboards/Dashboard.tpl.html"
+    ]
+  },
+  "test": {
+    "filesJs": [
+      "implements/coverage/boxes/boxMain/BoxMain.js",
+      "implements/coverage/boxes/boxHeader/BoxHeader.js",
+      "implements/coverage/boxes/boxDashboard/BoxDashboard.js"
+    ],
+    "filesTests": [
+      "implements/test/boxes/boxMain/BoxMain.test.js",
+      "implements/test/boxes/boxHeader/BoxHeader.test.js",
+      "implements/test/boxes/boxDashboard/BoxDashboard.test.js"
+    ]
+  }
+}
