@@ -112,6 +112,14 @@
           {
             "src": "libs/datatable/jquery.datatables.css",
             "dest_name": "css/datatables.css"
+          },
+          {
+            "src": "libs/materialize/js/materialize.min.js",
+            "dest_name": "js/materialize.js"
+          },
+          {
+            "src": "libs/materialize/css/materialize.min.css",
+            "dest_name": "css/materialize.min.css"
           }
         ]
       }

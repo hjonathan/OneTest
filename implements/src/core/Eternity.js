@@ -1,7 +1,9 @@
 var Eternity = {
     version: "1.0.0",
-    create: function (data) {
-        var module = OneFlux.instantiateFactory("@moduleBuilder", data);
-        return module.module;
+    login: function (data) {
+        //var module = OneFlux.instantiateFactory("@moduleBuilder", data);
+        console.log("jonas");
+        var module = OneFlux.instantiateFactory("@Eternity.module.login", data);
+        return module;
     }
 };
