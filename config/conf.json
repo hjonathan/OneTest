@@ -82,14 +82,30 @@
   },
   "build": {
     "filesCSS": [
-      "implements/src/modules/login/Login.css"
+      "implements/src/modules/login/Login.css",
+      "implements/src/modules/mainBox/MainBox.css",
+      "implements/src/modules/loadMask/LoadMask.css",
+      "implements/src/modules/panelMain/PanelMain.css",
+      "implements/src/modules/panelCards/PanelCards.css",
+      "implements/src/elements/cardProcess/CardProcess.css"
     ],
     "filesJS": [
+      "implements/src/services/webService/WebServiceManager.js",
       "implements/src/modules/login/Login.js",
+      "implements/src/modules/mainBox/MainBox.js",
+      "implements/src/modules/loadMask/LoadMask.js",
+      "implements/src/modules/panelMain/PanelMain.js",
+      "implements/src/modules/panelCards/PanelCards.js",
+      "implements/src/elements/cardProcess/CardProcess.js",
       "implements/src/core/Eternity.js"
     ],
     "templates": [
-      "implements/src/modules/login/Login.tpl.html"
+      "implements/src/modules/login/Login.tpl.html",
+      "implements/src/modules/mainBox/MainBox.tpl.html",
+      "implements/src/modules/loadMask/loadMask.tpl.html",
+      "implements/src/modules/panelMain/PanelMain.tpl.html",
+      "implements/src/modules/panelCards/PanelCards.tpl.html",
+      "implements/src/elements/cardProcess/CardProcess.tpl.html"
     ]
   }
 }

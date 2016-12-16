@@ -1,0 +1,22 @@
+.eternity-panelmain .side-nav .userView {
+    background-image: url(http://il9.picdn.net/shutterstock/videos/12557006/thumb/1.jpg);
+    text-align: center;
+}
+
+.eternity-panelmain .user-menu {
+    padding-left: 36% !important;
+}
+
+.eternity-panelmain .side-nav li {
+    float: none;
+    line-height: 48px;
+    text-align: left;
+}
+
+.eternity-panelmain nav {
+    background-color: #084885;
+}
+
+.eternity-panelmain .side-nav {
+    box-shadow: 4px 0px 14px #ffffff !important;
+}

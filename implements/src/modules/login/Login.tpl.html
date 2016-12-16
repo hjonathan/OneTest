@@ -18,12 +18,17 @@
                     </div>
                 </div>
 
-                <form id="local-login" action="/auth/local/connect?_csrf=u8ZvTNsx-Agwmqw5WnVACRkJp4taG3Fa1DBY" method="POST" data-parsley-validate="" style="margin-top:15px;" novalidate="">
+                <form id="local-login" action="/auth/local/connect?_csrf=u8ZvTNsx-Agwmqw5WnVACRkJp4taG3Fa1DBY"
+                      method="POST" data-parsley-validate="" style="margin-top:15px;" novalidate="">
 
                     <div class="row">
                         <div class="content col4">
                             <label for="email">Email address</label>
-                            <input type="email" data-parsley-type="email" required="" data-parsley-required="" data-parsley-required-message="Please enter an email address" placeholder="" name="primaryEmail" data-parsley-id="2010"><ul class="parsley-errors-list" id="parsley-id-2010"></ul>
+                            <input id="et-user" type="text" data-parsley-type="email" required=""
+                                   data-parsley-required=""
+                                   data-parsley-required-message="Please enter an email address" placeholder=""
+                                   name="primaryEmail" data-parsley-id="2010">
+                            <ul class="parsley-errors-list" id="parsley-id-2010"></ul>
                         </div>
                     </div>
                     <div class="row">
@@ -33,10 +38,14 @@
                                     <label for="email">Password</label>
                                 </div>
                                 <div class="col3 content text-right">
-                                    <label class="legend forgot-psw-text" id="forgot-psw-switch">forgot password?</label>
+                                    <label class="legend forgot-psw-text" id="forgot-psw-switch">forgot
+                                        password?</label>
                                 </div>
                             </div>
-                            <input type="password" required="" data-parsley-required="" data-parsley-required-message="Please enter a password" placeholder="" name="password" data-parsley-id="6662"><ul class="parsley-errors-list" id="parsley-id-6662"></ul>
+                            <input id="et-pw" type="password" required="" data-parsley-required=""
+                                   data-parsley-required-message="Please enter a password" placeholder=""
+                                   name="password" data-parsley-id="6662">
+                            <ul class="parsley-errors-list" id="parsley-id-6662"></ul>
                         </div>
                     </div>
 

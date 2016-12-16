@@ -59,10 +59,8 @@
              }
              ]
              };*/
-            var mod = Eternity.login({});
-            mod.render({
-                $container: $("#app-container")
-            });
+            Eternity.init($("#app-container"));
+            Eternity.login();
         });
         //changes
     </script>

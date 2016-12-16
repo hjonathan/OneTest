@@ -1,17 +1,17 @@
 (function () {
-    var ActionElement = OneFlux.extend.component({
+    var Main = OneFlux.extend.component({
         $html: null,
         template: null,
         init: function (options) {
             var that = this;
-            this.template = _.template($("#tpl-action-element").html());
+            this.template = _.template($("#tpl-eternity-mainbox").html());
             this.set("options", options);
-            this.actionListeners();
+            //this.actionListeners();
             return this;
         },
         actionListeners: function () {
             //this.on("click-" + this.getId(), this.get("options") ? this.get("options").onClick : null);
-            this.on("render-action-element", this.render);
+            //this.on("render-action-element", this.render);
         },
         render: function (obj) {
             var that = this;
@@ -19,18 +19,10 @@
             if (obj && obj.$container) {
                 obj.$container.append(this.$html);
             }
-            this.attachClick(this.$html);
+            //this.attachClick(this.$html);
             return this;
-        },
-        attachClick: function (objDom) {
-            var that = this;
-            objDom.click(function (event) {
-                that.dispatch("click-" + that.getId(), {
-                    event: event
-                });
-            });
         }
     });
 
-    OneFlux.registerFactory("@actionElement", [], ActionElement);
+    OneFlux.registerFactory("@Eternity.module.Main", [], Main);
 })();
