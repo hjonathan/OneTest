@@ -29,17 +29,8 @@
                     if (!err) {
                         service.setKeys(data);
                         Eternity.loadModule("$panelMain");
-                        Eternity.exeAsync(function () {
-                            service.processes(function (err, data) {
-                                if (!err) {
-                                    console.log("llegue al async del processes");
-                                    console.log(data);
-                                    Eternity.dispatch("loadProcesses", data);
-                                }
-                            })
-                        });
+                        Eternity.loadProcess();
                     }
-
                 });
             });
         }

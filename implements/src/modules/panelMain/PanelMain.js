@@ -20,7 +20,17 @@
             this.dispatch("renderPanelMain", {
                 $container: this.$html
             });
+            this.attachEvents(this.$html);
             return this;
+        },
+        attachEvents: function (dom) {
+            var that = this;
+            dom.find("#processes-load").click(function () {
+                Eternity.removeModule("$panelCards");
+                Eternity.removeModule("$panelCards");
+                Eternity.loadModule("$panelMain");
+                Eternity.loadProcess();
+            });
         }
     });
 

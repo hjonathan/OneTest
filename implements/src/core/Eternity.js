@@ -99,5 +99,15 @@ var Eternity = {
         setTimeout(function () {
             callback();
         }, 1000);
+    },
+    loadProcess: function () {
+        var service = OneFlux.service("webServiceManager");
+        Eternity.exeAsync(function () {
+            service.processes(function (err, data) {
+                if (!err) {
+                    Eternity.dispatch("loadProcesses", data);
+                }
+            })
+        });
     }
 };
