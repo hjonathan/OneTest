@@ -10,7 +10,7 @@ _.extend(ComponentBase.prototype, {
     init: function (options) {
         var emitter = new Event.EventEmitter();
         _.extend(this, emitter);
-        this.options = {};
+        this.data = {};
         this.parent = null;
         this.id = options && options.id ? options.id : uuid.v1();
         this.collection = [];
@@ -56,10 +56,10 @@ _.extend(ComponentBase.prototype, {
         return null;
     },
     get: function (key) {
-        return this.options[key];
+        return this.data[key];
     },
     set: function (key, value) {
-        this.options[key] = value;
+        this.data[key] = value;
         return this;
     },
     setParent: function (parent) {

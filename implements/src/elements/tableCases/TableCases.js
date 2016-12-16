@@ -5,6 +5,8 @@
         init: function (options) {
             var that = this;
             this.template = _.template($("#tpl-eternity-tablecases").html());
+            this.templateRow = _.template($("#tpl-eternity-tablerow").html());
+
             _.extend(this.data, options);
             this.actionListeners();
             return this;
@@ -29,7 +31,7 @@
             console.log(obj);
             var index;
             for (index = 0; index < obj.data.length; index++) {
-        
+                this.$html.find("tbody").append($(this.templateRow(obj.data[index])))
             }
         },
         attachClick: function (dom) {
