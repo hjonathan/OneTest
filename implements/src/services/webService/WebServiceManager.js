@@ -12,7 +12,7 @@
             processes: "api/v1/processes",
             newInstance: "api/v1/processes/{processID}/instances",
             newInstanceS: "api/cobject/v1/register",
-            loadCases : 
+            loadCases: "",
 
             startCase: "light/process/{processUID}/task/{taskUID}/start-case",
             trigger: "light/process/{processUID}/task/{taskUID}/case/{caseUID}/step/{stepUID}/execute-trigger/{triggerOption}",

@@ -25,8 +25,7 @@
         },
         loadCases: function (obj) {
             var ws = OneFlux.service("webServiceManager");
-            ws.
-            return this;
+
         }
     });
 
