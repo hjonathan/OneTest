@@ -6,6 +6,7 @@
             var that = this;
             this.template = _.template($("#tpl-eternity-panelcases").html());
             _.extend(this.data, options);
+            this.actionListeners();
             return this;
         },
         actionListeners: function () {
@@ -18,14 +19,19 @@
             if (obj && obj.$container) {
                 obj.$container.append(this.$html);
             }
-            /*this.dispatch("renderPanelMain", {
-             $container: this.$html
-             });*/
+            this.dispatch("renderPanelCases", {
+                $container: this.$html
+            });
             return this;
         },
         loadCases: function (obj) {
-            var ws = OneFlux.service("webServiceManager");
-
+            var that = this,
+                ws = OneFlux.service("webServiceManager");
+            ws.loadCases(obj, function (err, data) {
+                if (!err) {
+                    that.dispatch("loadTableCases", data);
+                }
+            });
         }
     });
 

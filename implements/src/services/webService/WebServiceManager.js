@@ -12,7 +12,7 @@
             processes: "api/v1/processes",
             newInstance: "api/v1/processes/{processID}/instances",
             newInstanceS: "api/cobject/v1/register",
-            loadCases: "",
+            loadCases: "api/v1/processes/{processID}/instances",
 
             startCase: "light/process/{processUID}/task/{taskUID}/start-case",
             trigger: "light/process/{processUID}/task/{taskUID}/case/{caseUID}/step/{stepUID}/execute-trigger/{triggerOption}",
@@ -195,20 +195,20 @@
         var that = this,
             resp,
             url,
-            method = "POST";
+            method = "GET";
         this.setKey("processID", data["processID"]);
-        url = that.getFullEndPoint(that.options.keys, that.options.urlBase, that.options.endPoints.newInstance);
+        url = that.getFullEndPoint(that.options.keys, that.options.urlBase, that.options.endPoints.loadCases);
         $.ajax({
             url: url,
             type: method,
             async: true,
-            data: JSON.stringify(data.data),
             crossDomain: true,
             contentType: "application/json",
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("Authorization", "Bearer " + that.getKey("access_token"));
             },
             success: function (d, textStatus) {
+                console.log("jonas loadcases");
                 callback(null, d);
             },
             error: function (xhr, textStatus, errorThrown) {

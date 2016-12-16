@@ -3,7 +3,7 @@ var Eternity = {
     moduleActive: null,
     version: "1.0.0",
     init: function (container) {
-        var BoxMain, LoadMask, Login, PanelMain, webService, PanelCards, Bread, PanelCases;
+        var BoxMain, LoadMask, Login, PanelMain, webService, PanelCards, Bread, PanelCases, TableCases;
         BoxMain = OneFlux.instantiateFactory("@Eternity.module.Main", {});
         LoadMask = OneFlux.instantiateFactory("@Eternity.module.LoadMask", {});
         Login = OneFlux.instantiateFactory("@Eternity.module.Login", {});
@@ -11,6 +11,7 @@ var Eternity = {
         PanelCards = OneFlux.instantiateFactory("@Eternity.module.PanelCards", {});
         PanelCases = OneFlux.instantiateFactory("@Eternity.module.PanelCases", {});
         Bread = OneFlux.instantiateFactory("@Eternity.module.Breadcrums", {});
+        TableCases = OneFlux.instantiateFactory("@Eternity.element.TableCases", {});
 
         OneFlux.component("$main", BoxMain);
         OneFlux.component("$loadMask", LoadMask);
@@ -18,6 +19,7 @@ var Eternity = {
         OneFlux.component("$panelMain", PanelMain);
         OneFlux.component("$panelCards", PanelCards);
         OneFlux.component("$panelCases", PanelCases);
+        OneFlux.component("$tableCases", TableCases);
 
         OneFlux.component("$breadcrums", Bread);
 
@@ -26,6 +28,8 @@ var Eternity = {
         PanelMain.addComponent(Bread.getId(), Bread);
         PanelMain.addComponent(PanelCards.getId(), PanelCards);
         PanelMain.addComponent(PanelCases.getId(), PanelCases);
+
+        PanelCases.addComponent(TableCases.getId(), TableCases);
 
         webService = OneFlux.getFactory("@Eternity.service.WebServiceManager");
         OneFlux.service("webServiceManager", new webService({

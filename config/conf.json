@@ -89,7 +89,8 @@
       "implements/src/modules/panelCards/PanelCards.css",
       "implements/src/modules/panelCases/PanelCases.css",
       "implements/src/modules/breadcrums/Breadcrums.css",
-      "implements/src/elements/cardProcess/CardProcess.css"
+      "implements/src/elements/cardProcess/CardProcess.css",
+      "implements/src/elements/tableCases/TableCases.css"
     ],
     "filesJS": [
       "implements/src/services/webService/WebServiceManager.js",
@@ -101,6 +102,7 @@
       "implements/src/modules/panelCases/PanelCases.js",
       "implements/src/modules/breadcrums/Breadcrums.js",
       "implements/src/elements/cardProcess/CardProcess.js",
+      "implements/src/elements/tableCases/TableCases.js",
       "implements/src/core/Eternity.js"
     ],
     "templates": [
@@ -111,7 +113,8 @@
       "implements/src/modules/panelCards/PanelCards.tpl.html",
       "implements/src/modules/panelCases/PanelCases.tpl.html",
       "implements/src/modules/breadcrums/Breadcrums.tpl.html",
-      "implements/src/elements/cardProcess/CardProcess.tpl.html"
+      "implements/src/elements/cardProcess/CardProcess.tpl.html",
+      "implements/src/elements/tableCases/TableCases.tpl.html"
     ]
   }
 }
