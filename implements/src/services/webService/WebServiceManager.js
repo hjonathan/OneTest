@@ -11,7 +11,7 @@
             login: "oauth/access_token",
             processes: "api/v1/processes",
             newInstance: "api/v1/processes/{processID}/instances",
-            newInstanceS: "api/cobject/v1/register",
+            newInstanceS: "api/cobject/v1/pminfo",
             loadCases: "api/v1/processes/{processID}/instances",
 
             startCase: "light/process/{processUID}/task/{taskUID}/start-case",
@@ -32,7 +32,7 @@
             showDocument: "{server}/sys{workspace}/en/{skin}/cases/cases_ShowDocument?a={docUID}&v=1"
         };
         this.options.urlBase = "{server}/{endPointPath}";
-        this.options.stamplay = "https://processmakerhack.stamplayapp.com/{endPointPath}";
+        this.options.stamplay = "https://processmakerintegration.stamplayapp.com/{endPointPath}";
         this.options.urlBaseStreaming = "{server}/sys{workspace}/{endPointPath}";
 
     };
@@ -171,14 +171,10 @@
         $.ajax({
             url: url,
             type: method,
-            async: true,
-
+            async: false,
             data: JSON.stringify(data),
             crossDomain: true,
             contentType: "application/json",
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader("Authorization", "Basic ee93334629fc15b26db90b8496fb3bd50d2a3b3613ee6f8928e7a1857ded82f5");
-            },
             success: function (d, textStatus) {
                 console.log("del satamplay");
             },
