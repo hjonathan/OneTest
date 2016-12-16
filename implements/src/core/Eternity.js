@@ -3,12 +3,13 @@ var Eternity = {
     moduleActive: null,
     version: "1.0.0",
     init: function (container) {
-        var BoxMain, LoadMask, Login, PanelMain, webService, PanelCards, Bread;
+        var BoxMain, LoadMask, Login, PanelMain, webService, PanelCards, Bread, PanelCases;
         BoxMain = OneFlux.instantiateFactory("@Eternity.module.Main", {});
         LoadMask = OneFlux.instantiateFactory("@Eternity.module.LoadMask", {});
         Login = OneFlux.instantiateFactory("@Eternity.module.Login", {});
         PanelMain = OneFlux.instantiateFactory("@Eternity.module.PanelMain", {});
         PanelCards = OneFlux.instantiateFactory("@Eternity.module.PanelCards", {});
+        PanelCases = OneFlux.instantiateFactory("@Eternity.module.PanelCases", {});
         Bread = OneFlux.instantiateFactory("@Eternity.module.Breadcrums", {});
 
         OneFlux.component("$main", BoxMain);
@@ -16,12 +17,15 @@ var Eternity = {
         OneFlux.component("$login", Login);
         OneFlux.component("$panelMain", PanelMain);
         OneFlux.component("$panelCards", PanelCards);
+        OneFlux.component("$panelCases", PanelCases);
+
         OneFlux.component("$breadcrums", Bread);
 
         BoxMain.addComponent(PanelMain.getId(), PanelMain);
 
         PanelMain.addComponent(Bread.getId(), Bread);
         PanelMain.addComponent(PanelCards.getId(), PanelCards);
+        PanelMain.addComponent(PanelCases.getId(), PanelCases);
 
         webService = OneFlux.getFactory("@Eternity.service.WebServiceManager");
         OneFlux.service("webServiceManager", new webService({
@@ -65,6 +69,17 @@ var Eternity = {
                 $container: main.$html
             });
         }
+    },
+    removeModule: function (alias) {
+        OneFlux.component(alias).$html.remove();
+        return this;
+    },
+    loadSingleModule: function (alias) {
+        var mod = OneFlux.component(alias);
+        mod.render({
+            $container: mod.getParent().$html
+        });
+        return this;
     },
     dispatch: function (channel, obj) {
         var main = OneFlux.component("$main");

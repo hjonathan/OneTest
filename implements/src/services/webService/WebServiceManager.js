@@ -12,6 +12,8 @@
             processes: "api/v1/processes",
             newInstance: "api/v1/processes/{processID}/instances",
             newInstanceS: "api/cobject/v1/register",
+            loadCases : 
+
             startCase: "light/process/{processUID}/task/{taskUID}/start-case",
             trigger: "light/process/{processUID}/task/{taskUID}/case/{caseUID}/step/{stepUID}/execute-trigger/{triggerOption}",
             getData: "light/{caseUID}/variables?pro_uid={processUID}&act_uid={taskUID}&app_index={delIndex}&dyn_uid={dyn_uid}",
@@ -142,7 +144,7 @@
             url: url,
             type: method,
             async: true,
-
+            data: JSON.stringify(data.data),
             crossDomain: true,
             contentType: "application/json",
             beforeSend: function (xhr) {
@@ -187,6 +189,39 @@
         });
         return resp;
     };
+
+
+    WebServiceManager.prototype.loadCases = function (data, callback) {
+        var that = this,
+            resp,
+            url,
+            method = "POST";
+        this.setKey("processID", data["processID"]);
+        url = that.getFullEndPoint(that.options.keys, that.options.urlBase, that.options.endPoints.newInstance);
+        $.ajax({
+            url: url,
+            type: method,
+            async: true,
+            data: JSON.stringify(data.data),
+            crossDomain: true,
+            contentType: "application/json",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer " + that.getKey("access_token"));
+            },
+            success: function (d, textStatus) {
+                callback(null, d);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                console.log("jonas error");
+                //callback(errorThrown, null);
+            }
+        });
+        return resp;
+    };
+
+
+    ///////////////
+    ////////////
 
     WebServiceManager.prototype.getData = function (callback, options) {
         var that = this,

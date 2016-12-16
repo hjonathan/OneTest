@@ -11,7 +11,7 @@
         },
         actionListeners: function () {
             //this.on("click-" + this.getId(), this.get("options") ? this.get("options").onClick : null);
-            this.on("renderPanelMain", this.render);
+            //this.on("renderPanelMain", this.render);
         },
         render: function (obj) {
             var that = this;

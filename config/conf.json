@@ -87,6 +87,7 @@
       "implements/src/modules/loadMask/LoadMask.css",
       "implements/src/modules/panelMain/PanelMain.css",
       "implements/src/modules/panelCards/PanelCards.css",
+      "implements/src/modules/panelCases/PanelCases.css",
       "implements/src/modules/breadcrums/Breadcrums.css",
       "implements/src/elements/cardProcess/CardProcess.css"
     ],
@@ -97,6 +98,7 @@
       "implements/src/modules/loadMask/LoadMask.js",
       "implements/src/modules/panelMain/PanelMain.js",
       "implements/src/modules/panelCards/PanelCards.js",
+      "implements/src/modules/panelCases/PanelCases.js",
       "implements/src/modules/breadcrums/Breadcrums.js",
       "implements/src/elements/cardProcess/CardProcess.js",
       "implements/src/core/Eternity.js"
@@ -107,6 +109,7 @@
       "implements/src/modules/loadMask/loadMask.tpl.html",
       "implements/src/modules/panelMain/PanelMain.tpl.html",
       "implements/src/modules/panelCards/PanelCards.tpl.html",
+      "implements/src/modules/panelCases/PanelCases.tpl.html",
       "implements/src/modules/breadcrums/Breadcrums.tpl.html",
       "implements/src/elements/cardProcess/CardProcess.tpl.html"
     ]

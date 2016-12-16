@@ -60,6 +60,11 @@
                     }
                 });
 
+                Eternity.removeModule("$panelCards");
+                Eternity.loadSingleModule("$panelCases");
+                OneFlux.component("$panelCases").dispatch("loadCases", {
+                    data: "data"
+                });
             });
         }
     });
