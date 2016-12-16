@@ -142,6 +142,7 @@
             url: url,
             type: method,
             async: true,
+
             crossDomain: true,
             contentType: "application/json",
             beforeSend: function (xhr) {
@@ -168,8 +169,8 @@
         $.ajax({
             url: url,
             type: method,
-            async: false,
-            headers: {},
+            async: true,
+
             data: JSON.stringify(data),
             crossDomain: true,
             contentType: "application/json",

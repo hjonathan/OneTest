@@ -3,20 +3,24 @@ var Eternity = {
     moduleActive: null,
     version: "1.0.0",
     init: function (container) {
-        var BoxMain, LoadMask, Login, PanelMain, webService, PanelCards;
+        var BoxMain, LoadMask, Login, PanelMain, webService, PanelCards, Bread;
         BoxMain = OneFlux.instantiateFactory("@Eternity.module.Main", {});
         LoadMask = OneFlux.instantiateFactory("@Eternity.module.LoadMask", {});
         Login = OneFlux.instantiateFactory("@Eternity.module.Login", {});
         PanelMain = OneFlux.instantiateFactory("@Eternity.module.PanelMain", {});
         PanelCards = OneFlux.instantiateFactory("@Eternity.module.PanelCards", {});
+        Bread = OneFlux.instantiateFactory("@Eternity.module.Breadcrums", {});
 
         OneFlux.component("$main", BoxMain);
         OneFlux.component("$loadMask", LoadMask);
         OneFlux.component("$login", Login);
         OneFlux.component("$panelMain", PanelMain);
         OneFlux.component("$panelCards", PanelCards);
+        OneFlux.component("$breadcrums", Bread);
 
         BoxMain.addComponent(PanelMain.getId(), PanelMain);
+
+        PanelMain.addComponent(Bread.getId(), Bread);
         PanelMain.addComponent(PanelCards.getId(), PanelCards);
 
         webService = OneFlux.getFactory("@Eternity.service.WebServiceManager");

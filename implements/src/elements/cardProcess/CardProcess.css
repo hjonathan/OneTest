@@ -1,5 +1,33 @@
-.eternity-panelcards .card.horizontal {
+.eternity-panelcards .card {
     width: 330px;
     margin-right: 18px;
     float: left;
+    height: 200px;
+}
+
+.eternity-panelcards .card .card-image img {
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 127px;
+}
+
+.eternity-panelcards .card .card-title {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.eternity-panelcards .card .card-content {
+    padding: 10px;
+    text-align: left;
+    border-radius: 0 0 2px 2px;
+}
+
+.eternity-panelcards .card .card-content .card-title {
+    line-height: 27px;
 }

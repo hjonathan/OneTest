@@ -1,0 +1,14 @@
+.eternity-breadcrums nav {
+    background-color: whitesmoke;
+    text-align: left;
+    padding-left: 330px;
+}
+
+.eternity-breadcrums .breadcrumb {
+    font-size: 18px;
+    color: rgba(49, 44, 44, 0.7);
+}
+
+.eternity-breadcrums .breadcrumb:before {
+    color: rgba(49, 44, 44, 0.7);
+}

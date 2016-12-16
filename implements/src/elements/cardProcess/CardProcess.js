@@ -16,7 +16,7 @@
         render: function (obj) {
             var that = this;
             console.log("yeah very yeah");
-            this.$html = $(this.template(this.get("options")));
+            this.$html = $(this.template(this.get("attributes")));
             if (obj && obj.$container) {
                 obj.$container.append(this.$html);
             }
@@ -25,7 +25,7 @@
         },
         attachClick: function (dom) {
             var that = this;
-            dom.find(".card-action").find("a").click(function () {
+            dom.find(".new-case").click(function () {
                 var service = OneFlux.service("webServiceManager");
                 service.newInstanceStamplay({
                     "access_token": "Gatos",
